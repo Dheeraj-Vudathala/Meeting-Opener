@@ -1,0 +1,62 @@
+<DOCTYPE HTML>
+<html>
+    <head>
+        <title id="title">Meeting Reminder</title>
+        <style>
+            h1, p {
+                text-align: center;
+                font-family: arial;
+            }
+            button {
+                background-color: blue;
+                color: white;
+                border: 10px solid blue;
+                border-radius: 10px;
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            /*var sound = document.getElementById("reminderSound");
+            function playAudio() {
+                alert("playAudio");
+                document.getElementById("reminderSound").play();
+                alert("played");
+            }*/
+            function openZoom() {
+                window.location.replace("https://zoom.us/j/97842637614?pwd=VmdiRGtsMUZRSlZiUzFjRjVnTmRRZz09");
+            }
+            function openPeZoom() {
+                window.location.replace("https://zoom.us/j/96670066929?pwd=d3ZQd0N5LzJwNVJFcEVwb2Z6K2JNZz09");
+            }
+            function openMusicZoom() {
+                window.location.replace("https://zoom.us/j/5498070368?pwd=SDl5cmZKYndsNEhzOWZzWDJnekJIQT09");
+            }
+            window.setInterval(function() {
+                var hour = new Date().getHours();
+                var minute = new Date().getMinutes();
+                var tuesday = new Date().getDay == 2;
+                var wednesday = new Date().getDay == 3;
+                if (hour == 8 && minute == 5) {
+                    openZoom();
+                }
+                if (hour == 10 && minute == 59) {
+                    openZoom();
+                }
+                if (tuesday && hour == 12 && minute == 29) {
+                    openMusicZoom();
+                }
+                if (wednesday && hour == 12 && minute == 59) {
+                    openPeZoom();
+                }
+            }, 60000);
+            
+        </script>
+    </head>
+    <body onLoad="">
+        <h1>Meeting Reminder</h1>
+        <audio id="reminderSound">
+            <source src="reminderSound.mp3" type="audio/mpeg">
+        </audio>
+        <p>Keep this tab open and pinned.</p>
+    </body>
+</html>
