@@ -58,13 +58,21 @@
             window.setInterval(function() {
                 var hour = new Date().getHours();
                 var minute = new Date().getMinutes();
+                var friday = new Date().getDay == 5;
                 var tuesday = new Date().getDay == 2;
                 var wednesday = new Date().getDay == 3;
-                if (hour == 8 && minute == 5) {
-                    openZoom();
+                if (friday) {
+                    if (hour == 9 && minute == 58) {
+                        openZoom();
+                    }
                 }
-                if (hour == 10 && minute == 59) {
-                    openZoom();
+                else {
+                    if (hour == 8 && minute == 5) {
+                        openZoom();
+                    }
+                    if (hour == 10 && minute == 59) {
+                        openZoom();
+                    }
                 }
                 if (tuesday && hour == 12 && minute == 27) {
                     openMusicZoom();
